@@ -11,10 +11,11 @@
 .App-header {
   background-image: url("http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2015/10/tfa_poster_wide_header-1536x864-959818851016.jpg");
   background-size: cover;
-  height: 200px;
+  height: 250px;
   padding: 20px;
   color: white;
   background-position:right;
+  top: 500px;
 }
 
 .App-intro {
@@ -30,6 +31,25 @@
   list-style: none;
 }
 
+.planetsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-image: url("https://pre04.deviantart.net/4819/th/pre/i/2008/046/1/7/star_wars_galaxy_stellar_map_by_kokolico.jpg");
+  text-align: center;
+  padding: 2% 10% 5% 15%;
+
+}
+
 .planetDiv{
   /*display: flex;*/
+  background-color: rgba(255, 255, 255, 0.80);
+  border: 1px solid grey;
+  border-radius: 4px;
+  width: 40%;
+  margin:20px;
+  padding: 0px;
+
+
+
 }
