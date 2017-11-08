@@ -6,12 +6,18 @@ function reducer(state, action){
 
   //get the planet information
   if (action.type === 'GETPLANETS'){
-    console.log(action.payload)
-  
     return {
 
       planets: action.payload,
 
+    }
+  }
+
+  //get the current planet name
+  if (action.type === 'CURRENT'){
+    return{
+      planets: state.planets,
+      current: action.payload,
     }
   }
 
@@ -20,6 +26,7 @@ function reducer(state, action){
 
 export default createStore(reducer, {
   planets: [],
+  current: '',
 },
 
 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

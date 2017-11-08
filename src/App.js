@@ -12,6 +12,7 @@ import { dispPlanets } from './actions'
 //import components
 import Pilot from './components/Pilot';
 import PlanetMap from './components/PlanetMap';
+import QuestionsPage from './components/QuestionsPage';
 
 
 class App extends Component {
@@ -35,7 +36,14 @@ class App extends Component {
 
         </div>
         <Pilot/>
-        <PlanetMap/>
+        <main>
+          <div id="planetsNavBar">
+            <PlanetMap/>
+          </div>
+          <div id="questionsSection">
+            <QuestionsPage />
+          </div>
+        </main>
       </div>
     );
   }
@@ -47,9 +55,7 @@ function mapDispatch2Props(dispatch){
       fetch('https://swapi.co/api/planets/')
         .then(resp => resp.json())
         .then(response =>
-
           dispatch(dispPlanets(response.results))
-
         );
     }
   }

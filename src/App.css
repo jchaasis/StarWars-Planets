@@ -27,8 +27,17 @@
   to { transform: rotate(360deg); }
 }
 
+main{
+  width: 100%;
+  display: flex;
+}
+
 .details{
   list-style: none;
+}
+
+#planetsNavBar{
+  width: 30%;
 }
 
 .planetsContainer{
@@ -38,7 +47,10 @@
   background-image: url("https://pre04.deviantart.net/4819/th/pre/i/2008/046/1/7/star_wars_galaxy_stellar_map_by_kokolico.jpg");
   text-align: center;
   padding: 2% 10% 5% 15%;
+}
 
+#questionsSection{
+  width: 80%;
 }
 
 .planetDiv{
@@ -46,10 +58,7 @@
   background-color: rgba(255, 255, 255, 0.80);
   border: 1px solid grey;
   border-radius: 50%;
-  width: 40%;
+  width: 50%;
   margin:20px;
   padding: 10px;
-
-
-
 }

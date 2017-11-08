@@ -6,3 +6,10 @@ export function dispPlanets(planets){
     payload: planets,
   }
 }
+
+export function currentPlanet(current){
+  return{
+    type: "CURRENT",
+    payload: current
+  }
+}
