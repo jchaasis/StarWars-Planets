@@ -4,5 +4,20 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//import components and other goodies
+import store from './store';
+
+//import goodies from redux
+import {Provider} from 'react-redux';
+
+//import goodies from router
+import {BrowserRouter} from 'react-router-dom';
+
+
+ReactDOM.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();

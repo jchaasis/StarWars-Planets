@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 //import styling
 import './App.css';
+
+//import redux goodies
+import { connect } from 'react-redux';
+
+//import actions
+import { dispPlanets } from './actions'
+
 //import components
 import Pilot from './components/Pilot';
-import Planet from './components/Planet';
+import PlanetMap from './components/PlanetMap';
 
 
 class App extends Component {
@@ -16,6 +23,11 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+  //get the planet data to then store in redux
+  this.props.fetchPlanets()
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,10 +35,24 @@ class App extends Component {
 
         </div>
         <Pilot/>
-        <Planet/>
+        <PlanetMap/>
       </div>
     );
   }
 }
 
-export default App;
+function mapDispatch2Props(dispatch){
+  return{
+    fetchPlanets: function(){
+      fetch('https://swapi.co/api/planets/')
+        .then(resp => resp.json())
+        .then(response =>
+
+          dispatch(dispPlanets(response.results))
+
+        );
+    }
+  }
+}
+
+export default connect(null, mapDispatch2Props)(App);

@@ -15,7 +15,7 @@
   padding: 20px;
   color: white;
   background-position:right;
-  top: 500px;
+  position:
 }
 
 .App-intro {
@@ -45,10 +45,10 @@
   /*display: flex;*/
   background-color: rgba(255, 255, 255, 0.80);
   border: 1px solid grey;
-  border-radius: 4px;
+  border-radius: 50%;
   width: 40%;
   margin:20px;
-  padding: 0px;
+  padding: 10px;
 
 
 
