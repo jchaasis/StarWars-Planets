@@ -18,8 +18,10 @@ class Pilot extends Component {
 
   handleSubmit(){
     this.setState({
-      message: 'Well, ' + this.state.name + ', lets go conquer the galaxy! pick a planet and get going!'
+      message: 'Well, ' + this.state.name + ', lets go conquer the galaxy!'
     });
+    //pass the pilot name back up to app.js so that the map and questions section will display
+    this.props.handlePilot(this.state.name)
   }
 
   render(){

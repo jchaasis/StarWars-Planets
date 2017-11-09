@@ -13,3 +13,10 @@ export function currentPlanet(current){
     payload: current
   }
 }
+
+export function increaseScore(points){
+  return{
+    type: "SCORE",
+    payload: points,
+  }
+}

@@ -16,23 +16,34 @@ class Planet extends Component{
     };
   }
 
-
   render() {
-    //map through the planets and create a div for each one
+
+    //create a class to designate which planet the pilot is currently on
+    // if (this.props.planet.name === this.props.current.name) {
+    //   console.log('currently on ' + this.props.current)
+    // }
+    //
+    // let currentStyle = {
+    //   backgroundColor: 'red',
+    // }
 
     return (
       <div className="planetDiv" onClick={()=>this.props.getCurrent(this.props.planet)}>
-        <h3>{this.props.planet.name}</h3>
+        <h3 className='planetHeader'>{this.props.planet.name}</h3>
       </div>
     );
 
   }
 }
-
+function mapState2Props(state){
+  return{
+    current: state.current,
+  }
+}
 function mapDispatch2Props(dispatch){
   return{
   getCurrent: planet => dispatch(currentPlanet(planet))
   }
 }
 
-export default connect(null, mapDispatch2Props)(Planet);
+export default connect(mapState2Props, mapDispatch2Props)(Planet);

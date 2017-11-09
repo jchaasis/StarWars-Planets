@@ -24,28 +24,50 @@ class App extends Component {
     };
   }
 
+
   componentDidMount() {
   //get the planet data to then store in redux
   this.props.fetchPlanets()
   }
 
+  //once the pilots name has been submitted, display the map and questions
+  handlePilot(pilot){
+    this.setState({
+      name: pilot,
+    })
+  }
+
   render() {
+  //when a name is entered, display the map and the questions section
+  let planetMap = this.state.name === '' ? null : <PlanetMap/>
+  let questions = this.state.name === '' ? null : <QuestionsPage/>
+  let scoreBoard = this.state.name === '' ? null : `Score: ${this.props.score}`
+
     return (
       <div className="App">
         <div className="App-header">
 
         </div>
-        <Pilot/>
+        <div id="mainHeader">
+          <Pilot handlePilot={()=>this.handlePilot()}/>
+          <h3>{scoreBoard}</h3>
+        </div>
         <main>
           <div id="planetsNavBar">
-            <PlanetMap/>
+            {planetMap}
           </div>
           <div id="questionsSection">
-            <QuestionsPage />
+            {questions}
           </div>
         </main>
+
       </div>
     );
+  }
+}
+function mapState2Props(state){
+  return{
+    score: state.score,
   }
 }
 
@@ -61,4 +83,4 @@ function mapDispatch2Props(dispatch){
   }
 }
 
-export default connect(null, mapDispatch2Props)(App);
+export default connect(mapState2Props, mapDispatch2Props)(App);

@@ -7,9 +7,9 @@ function reducer(state, action){
   //get the planet information
   if (action.type === 'GETPLANETS'){
     return {
-
       planets: action.payload,
-
+      current: state.current,
+      score: state.score,
     }
   }
 
@@ -18,6 +18,15 @@ function reducer(state, action){
     return{
       planets: state.planets,
       current: action.payload,
+      score: state.score,
+    }
+  }
+
+  if (action.type === 'SCORE'){
+    return{
+      planets: state.planets,
+      current: state.current,
+      score: state.score + action.payload,
     }
   }
 
@@ -27,6 +36,7 @@ function reducer(state, action){
 export default createStore(reducer, {
   planets: [],
   current: '',
+  score: 0,
 },
 
 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

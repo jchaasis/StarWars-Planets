@@ -25,10 +25,19 @@
 main{
   width: 100%;
   display: flex;
+  background-image: url("https://pre04.deviantart.net/4819/th/pre/i/2008/046/1/7/star_wars_galaxy_stellar_map_by_kokolico.jpg");
 }
 
 .details{
   list-style: none;
+}
+
+#mainHeader{
+
+}
+
+#score{
+  margin-left: 20%;
 }
 
 #planetsNavBar{
@@ -39,21 +48,47 @@ main{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  background-image: url("https://pre04.deviantart.net/4819/th/pre/i/2008/046/1/7/star_wars_galaxy_stellar_map_by_kokolico.jpg");
+  /*background-image: url("https://pre04.deviantart.net/4819/th/pre/i/2008/046/1/7/star_wars_galaxy_stellar_map_by_kokolico.jpg");*/
   text-align: center;
   padding: 2% 10% 5% 15%;
 }
 
 #questionsSection{
+  display: flex;
+  justify-content: center;
   width: 80%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.80);
 }
 
 .planetDiv{
   /*display: flex;*/
+  text-align:center;
   background-color: rgba(255, 255, 255, 0.80);
   border: 1px solid grey;
   border-radius: 50%;
-  width: 50%;
-  margin:20px;
-  padding: 10px;
+  width: 100px;
+  height: 100px;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+.planetDiv:nth-child(2n){
+  margin-left: 30%;
+}
+
+.planetDiv:visited{
+  background-color: red;
+}
+
+.planetHeader{
+  margin-top: 39%;
+}
+
+li{
+
+}
+
+li:hover {
+
 }
