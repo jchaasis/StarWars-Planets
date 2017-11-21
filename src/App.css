@@ -85,10 +85,14 @@ main{
   margin-top: 39%;
 }
 
-li{
-
+.answer:hover{
+  background-color: red;
 }
 
-li:hover {
+.correctAnswer{
+  background-color: green;
+}
 
+.wrongAnswer{
+  background-color: red;
 }
